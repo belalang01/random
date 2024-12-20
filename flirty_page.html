@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ngorat 101 💕</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #121212, #343a40);
+      color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      font-size: 3.5rem;
+      margin-top: 50px;
+      color: #ff6f91;
+      text-shadow: 0 4px 12px rgba(255, 111, 145, 0.7);
+    }
+    p {
+      font-size: 1.2rem;
+      margin: 20px auto;
+      color: #ced4da;
+    }
+    .content-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease-in-out;
+    }
+    .heart-button {
+      background: linear-gradient(135deg, rgba(255, 111, 145, 0.8), rgba(255, 154, 158, 0.8));
+      border: none;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(255, 111, 145, 0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .heart-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(255, 111, 145, 0.6);
+    }
+    .heart {
+      font-size: 3rem;
+      animation: heartbeat 1.5s infinite;
+      color: #e63946;
+      text-shadow: 2px 2px 8px rgba(230, 57, 70, 0.8);
+      margin-bottom: 20px;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f8f9fa;
+      animation: slideIn 0.8s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #adb5bd;
+    }
+    footer a {
+      color: #ff6f91;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-card">
+    <h1>Hai, Orang Manis 💖</h1>
+    <p>
+      Nak dgr teka teki? <br>
+      You kene tekan button bawah dulu! 😉
+    </p>
+    <button class="heart-button" onclick="revealMessage()">Click Me 💌</button>
+    <div class="hidden-message">
+      <p class="heart">❤️</p>
+      <p>Assalammualaikum, abang motor lagenda hitam nk ngorat ni! 🥰</p>
+      <p class="pickup-line" id="pickup-line"></p>
+    </div>
+  </div>
+
+  <footer>
+    Made with ❤️ by <a href="#">Abg Motor Lagenda Hitam</a>
+  </footer>
+
+  <script>
+    const pickupLines = [
+      "Apa beza u dengan sardin? Sardin dalam tin, u dalam hati i.",
+      "Apa beza u dengan sardin? Sardin dalam tin, u dalam hati i.",
+      "Apa beza u dengan sardin? Sardin dalam tin, u dalam hati i."
+    ];
+
+    function revealMessage() {
+      const message = document.querySelector('.hidden-message');
+      const pickupLineElement = document.getElementById('pickup-line');
+      const randomPickupLine = pickupLines[Math.floor(Math.random() * pickupLines.length)];
+      pickupLineElement.textContent = randomPickupLine;
+      message.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
